@@ -1,0 +1,14 @@
+---
+- name: install motd
+  template:
+    src: motd.j2
+    dest: /etc/motd
+    owner: root
+    group: root
+    mode: 0644
+
+- name: set local timezone on all hosts
+  command: timedatectl set-timezone America/Detroit
+  when: timezone != "EDT"
+  notify:
+    - restart_chronyd

@@ -1,0 +1,2 @@
+---
+timezone: "{{ ansible_date_time.tz }}"

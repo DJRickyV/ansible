@@ -1,0 +1,8 @@
+---
+- name: use labnode role
+  hosts: node2
+  become: true
+
+  roles:
+    - labnode
+
